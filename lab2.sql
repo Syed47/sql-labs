@@ -1,0 +1,11 @@
+SELECT COUNT(*) FROM public.cs130lab2 where car_color = 'Yellow';
+SELECT COUNT(*) FROM public.cs130lab2 where parking_day != 'Saturday' and parking_day != 'Sunday';
+SELECT COUNT(*) FROM public.cs130lab2 where car_model like '%2500';
+SELECT COUNT(*) FROM public.cs130lab2 where car_make = 'Toyota' AND car_model = 'Corolla';
+SELECT car_reg, car_make, car_model FROM public.cs130lab2 where car_reg LIKE '%MH%' OR car_reg LIKE '%KE%';
+SELECT car_reg, car_make, car_model FROM public.cs130lab2 where car_reg LIKE '16%';
+SELECT car_reg, num_occupants, parking_hours from public.cs130lab2 where parking_hours >= 4 and num_occupants >= 3;
+SELECT car_reg, parking_day, parking_level, car_color from public.cs130lab2 where parking_level = 3 and parking_day = 'Tuesday' or car_color = 'Green';
+SELECT COUNT(*) from public.cs130lab2 where car_make LIKE 'T%' AND car_model LIKE 'T%' AND parking_day LIKE 'T%';
+SELECT car_reg from public.cs130lab2 WHERE car_reg LIKE '%-D-%' AND parking_level < (SELECT MAX(parking_level) from public.cs130lab2);
+SELECT car_reg from public.cs130lab2 where car_reg LIKE '1%1' AND (car_make = 'BMW' OR car_make = 'Chevrolet');
